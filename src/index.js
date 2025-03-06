@@ -2,36 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <h1>Profile Card</h1>
-    <App />
-  </React.StrictMode>
-);
-
 function App() {
   return (
     <div className="card">
       <Avatar />
-      <Intro />
-      <Skilllist skill="Java" />
-      <Skilllist skill="Springboot" />
-      <Skilllist skill="HTML + CSS" />
-      <Skilllist skill="Javascript" />
-      <Skilllist skill="JQuery" />
-      <Skilllist skill="React" />
-      <Skilllist skill="MySQL" />
+      <div className="data">
+        <Intro />
+        <Skilllist />
+      </div>
     </div>
   );
 }
 
 function Avatar() {
-  return (
-    <div>
-      <img src="/img/jamer.jpg" alt="jamer" className="img" />
-    </div>
-  );
+  return <img className="avatar" src="/img/jamersc.jpg" alt="jamer" />;
 }
 
 function Intro() {
@@ -39,18 +23,42 @@ function Intro() {
     <div>
       <h2>Jamer Catalla</h2>
       <p>
-        Associate Project Manager, Java Springboot & DevOps practitioner, I love
-        reading books, listening news & podcast, learning new things, taking
-        risks, & challenges.
+        Associate Project Manager in NexBridge Technologies Inc., Java
+        Springboot Developer & DevOps practitioner, I like learning new things,
+        reading, listening music/podcast etc, hiking, trekking, camping, &
+        beachineering.
       </p>
     </div>
   );
 }
 
-function Skilllist(props) {
+function Skilllist() {
   return (
-    <div>
-      <span>{props.skill}</span>
+    <div className="skill-list">
+      <Skill skill="Java+Springboot" emoji="💪" color="#40ff00" />
+      <Skill skill="HTML+CSS" emoji="👌" color="#ffbf00" />
+      <Skill skill="JavaScript" emoji="👌" color="#ffff00" />
+      <Skill skill="JQuery" emoji="👌" color="#ff4000" />
+      <Skill skill="React" emoji="👌" color="#00ffbf" />
+      <Skill skill="MySQL" emoji="💪" color="#00bfff" />
+      <Skill skill="Git+GitHub" emoji="💪" color="#ff8000" />
     </div>
   );
 }
+
+function Skill(props) {
+  return (
+    // using props to other components
+    <div className="skill" style={{ backgroundColor: props.color }}>
+      <span>{props.skill}</span>
+      <span>{props.emoji}</span>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
