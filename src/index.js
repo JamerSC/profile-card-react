@@ -1,54 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./styles.css";
-
-const skills = [
-  {
-    skill: "Java",
-    level: "advanced",
-    color: "#F29111",
-  },
-  {
-    skill: "Springboot",
-    level: "advanced",
-    color: "#6db33f",
-  },
-  {
-    skill: "HTML+CSS",
-    level: "intermediate",
-    color: "#ff0000",
-  },
-  {
-    skill: "JavaScript",
-    level: "intermediate",
-    color: "#ffff00",
-  },
-  {
-    skill: "JQuery",
-    level: "intermediate",
-    color: "#0769ad",
-  },
-  {
-    skill: "React",
-    level: "beginner",
-    color: "#58c4dc",
-  },
-  {
-    skill: "Bootstrap",
-    level: "intermediate",
-    color: "#6528e0",
-  },
-  {
-    skill: "Git & GitHub",
-    level: "intermediate",
-    color: "#f14e32",
-  },
-  {
-    skill: "MySQL",
-    level: "advanced",
-    color: "#0074a3",
-  },
-];
+import "./index.css";
+import { skills } from "./data";
 
 function App() {
   return (
@@ -63,18 +16,19 @@ function App() {
 }
 
 function Avatar() {
-  return <img className="avatar" src="/img/jamersc.jpg" alt="jamer" />;
+  return <img className="avatar" src="/img/jamersc.jpg" alt="Jamer Catalla" />;
 }
 
 function Intro() {
   return (
     <div>
-      <h2>Jamer Catalla</h2>
-      <p>
-        Associate Project Manager in NexBridge Technologies Inc., Java
-        Springboot Developer & DevOps practitioner, I like learning new things,
-        reading, listening music/podcast etc, hiking, trekking, camping, &
-        beachineering.
+      <h1>Jamer Catalla</h1>
+      <p className="intro">
+        Software Engineer in NexBridge Technologies Inc. (former Assoc. Project
+        Manager). Currently a Laravel/Php API Backend Developer. Springboot
+        Developer & DevOps practitioner. My indoor activities are studying,
+        reading, listening music & podcast. Outdoor activities hiking, trekking,
+        running/jogging, camping, & beachineering and more.
       </p>
     </div>
   );
